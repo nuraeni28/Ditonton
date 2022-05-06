@@ -35,10 +35,12 @@ import 'package:ditonton/presentation/bloc/movie_bloc/movie_popular.dart';
 import 'package:ditonton/presentation/bloc/movie_bloc/movie_top_rate.dart';
 import 'package:ditonton/presentation/bloc/movie_bloc/movie_watchlist/movie_watchlist_bloc.dart';
 import 'package:ditonton/presentation/bloc/search/movie_search_bloc.dart';
+import 'package:ditonton/presentation/bloc/search/tv_search_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv_bloc/tv_detail/tv_detail_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv_bloc/tv_list.dart';
 import 'package:ditonton/presentation/bloc/tv_bloc/tv_popular.dart';
 import 'package:ditonton/presentation/bloc/tv_bloc/tv_top_rate.dart';
+import 'package:ditonton/presentation/bloc/tv_bloc/tv_watchlist/tv_watchlist_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 import 'domain/usecases_movie/search_movies.dart';
@@ -101,8 +103,19 @@ void init() {
       locator(),
     ),
   );
+
+  locator.registerFactory(
+    () => WatchlistBlocTv(
+      locator(),
+    ),
+  );
   locator.registerFactory(
     () => SearchBlocMovie(
+      locator(),
+    ),
+  );
+  locator.registerFactory(
+    () => SearchBlocTv(
       locator(),
     ),
   );

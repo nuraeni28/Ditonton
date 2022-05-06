@@ -1,29 +1,29 @@
-import 'package:ditonton/domain/usecases_movie/search_movies.dart';
+import 'package:ditonton/domain/usecases_tv/search_tv.dart';
+import 'package:ditonton/presentation/bloc/search/tv_search_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 import 'search_event.dart';
-import 'movie_search_state.dart';
 
-class SearchBlocMovie extends Bloc<SearchEvent, SearchStateMovie> {
-  final SearchMovies searchMovies;
+class SearchBlocTv extends Bloc<SearchEvent, SearchStateTv> {
+  final SearchTv searchTv;
   EventTransformer<T> debounce<T>(Duration duration) {
     return (events, mapper) => events.debounceTime(duration).flatMap(mapper);
   }
 
-  SearchBlocMovie(this.searchMovies) : super(SearchMovieEmpty()) {
+  SearchBlocTv(this.searchTv) : super(SearchTvEmpty()) {
     on<OnQueryChanged>(
       (event, emit) async {
         final query = event.query;
 
-        emit(SearchMovieLoading());
-        final result = await searchMovies.execute(query);
+        emit(SearchTvLoading());
+        final result = await searchTv.execute(query);
 
         result.fold(
           (failure) {
-            emit(SearchMovieError(failure.message));
+            emit(SearchTvError(failure.message));
           },
           (data) {
-            emit(SearchMovieHasData(data));
+            emit(SearchTvHasData(data));
           },
         );
       },

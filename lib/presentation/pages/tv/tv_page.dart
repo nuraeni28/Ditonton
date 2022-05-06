@@ -7,9 +7,12 @@ import 'package:ditonton/presentation/bloc/tv_bloc/tv_popular.dart';
 import 'package:ditonton/presentation/bloc/tv_bloc/tv_state.dart';
 import 'package:ditonton/presentation/bloc/tv_bloc/tv_top_rate.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
+import 'package:ditonton/presentation/pages/movie/watchlist_movies_page.dart';
 import 'package:ditonton/presentation/pages/tv/popular_tv_page.dart';
+import 'package:ditonton/presentation/pages/tv/search_tv_page.dart';
 import 'package:ditonton/presentation/pages/tv/top_rated_tv_page.dart';
 import 'package:ditonton/presentation/pages/tv/tv_detail_page.dart';
+import 'package:ditonton/presentation/pages/tv/watchlist_tv_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -60,16 +63,16 @@ class _TvPageState extends State<TvPage> {
             ListTile(
               leading: Icon(Icons.save_alt),
               title: Text('Watchlist Movies'),
-              // onTap: () {
-              //   Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
-              // },
+              onTap: () {
+                Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
+              },
             ),
             ListTile(
               leading: Icon(Icons.save_alt),
               title: Text('Watchlist TV Series'),
-              // onTap: () {
-              //   Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
-              // },
+              onTap: () {
+                Navigator.pushNamed(context, WatchlistTvPage.ROUTE_NAME);
+              },
             ),
             ListTile(
               onTap: () {
@@ -84,12 +87,12 @@ class _TvPageState extends State<TvPage> {
       appBar: AppBar(
         title: Text('Ditonton'),
         actions: [
-          // IconButton(
-          //   onPressed: () {
-          //     Navigator.pushNamed(context, SearchMoviesPage.ROUTE_NAME);
-          //   },
-          //   icon: Icon(Icons.search),
-          // )
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, SearchTvPage.ROUTE_NAME);
+            },
+            icon: Icon(Icons.search),
+          )
         ],
       ),
       body: Padding(
