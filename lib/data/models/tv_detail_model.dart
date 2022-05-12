@@ -13,7 +13,7 @@ class TvDetailResponse extends Equatable {
     required this.overview,
     required this.popularity,
     required this.posterPath,
-    required this.firstAirDate,
+    // required this.firstAirDate,
     required this.episodeRunTime,
     required this.status,
     required this.tagline,
@@ -31,8 +31,8 @@ class TvDetailResponse extends Equatable {
   final String overview;
   final double popularity;
   final String posterPath;
-  final String firstAirDate;
-  final int episodeRunTime;
+  // final String firstAirDate;
+  final List<int> episodeRunTime;
   final String status;
   final String tagline;
   final String name;
@@ -51,10 +51,8 @@ class TvDetailResponse extends Equatable {
         overview: json['overview'],
         popularity: json["popularity"].toDouble(),
         posterPath: json["poster_path"],
-        firstAirDate: json["first_air_date"],
-        episodeRunTime: List<int?>.from(json["episode_run_time"]).isEmpty
-            ? 0
-            : List<int?>.from(json["episode_run_time"]).first ?? 0,
+        // firstAirDate: json["first_air_date"],
+        episodeRunTime: List<int>.from(json["episode_run_time"].map((x) => x)),
         status: json["status"],
         tagline: json["tagline"],
         name: json["name"],
@@ -72,7 +70,7 @@ class TvDetailResponse extends Equatable {
         "overview": overview,
         "popularity": popularity,
         "poster_path": posterPath,
-        "first_air_date": firstAirDate,
+        // "first_air_date": firstAirDate,
         "episode_run_time": [episodeRunTime],
         "status": status,
         "tagline": tagline,
@@ -89,7 +87,7 @@ class TvDetailResponse extends Equatable {
       originalName: originalName,
       overview: overview,
       posterPath: posterPath,
-      firstAirDate: firstAirDate,
+      // firstAirDate: firstAirDate,
       episodeRunTime: episodeRunTime,
       name: name,
       voteAverage: voteAverage,
@@ -109,7 +107,7 @@ class TvDetailResponse extends Equatable {
         overview,
         popularity,
         posterPath,
-        firstAirDate,
+        // firstAirDate,
         episodeRunTime,
         status,
         tagline,

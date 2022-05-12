@@ -5,7 +5,7 @@ import 'package:ditonton/data/datasources/movie_remote_data_source.dart';
 import 'package:ditonton/data/datasources/tv_local_data_source.dart';
 import 'package:ditonton/data/datasources/tv_remote_data_source.dart';
 import 'package:ditonton/data/repositories/movie_repository_impl.dart';
-import 'package:ditonton/data/repositories/tv_repository.impl.dart';
+import 'package:ditonton/data/repositories/tv_repository_impl.dart';
 import 'package:ditonton/domain/repositories/movie_repository.dart';
 import 'package:ditonton/domain/repositories/tv_repository.dart';
 import 'package:ditonton/domain/usecases_movie/get_movie_detail.dart';

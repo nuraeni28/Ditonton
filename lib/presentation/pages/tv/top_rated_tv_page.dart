@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 class TopRatedTvPage extends StatefulWidget {
-  static const ROUTE_NAME = '/top-rated-movie';
+  static const ROUTE_NAME = '/top-rated-tv';
 
   @override
   _TopRatedTvPageState createState() => _TopRatedTvPageState();
@@ -25,7 +25,7 @@ class _TopRatedTvPageState extends State<TopRatedTvPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Top Rated Movies'),
+        title: Text('Top Rated Tv Series'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

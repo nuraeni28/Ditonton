@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/common/constants.dart';
-import 'package:ditonton/domain/entities/genre.dart';
 import 'package:ditonton/common/state_enum.dart';
+import 'package:ditonton/domain/entities/genre.dart';
 import 'package:ditonton/domain/entities/tv.dart';
 import 'package:ditonton/domain/entities/tv_detail.dart';
 import 'package:ditonton/presentation/bloc/tv_bloc/tv_detail/tv_detail_bloc.dart';
@@ -156,7 +156,7 @@ class DetailContent extends StatelessWidget {
                               _showGenres(movie.genres),
                             ),
                             Text(
-                              _showDuration(movie.episodeRunTime),
+                              _formattedDuration(movie.episodeRunTime),
                             ),
                             Row(
                               children: [
@@ -282,4 +282,7 @@ class DetailContent extends StatelessWidget {
       return '${minutes}m';
     }
   }
+
+  String _formattedDuration(List<int> runtimes) =>
+      runtimes.map((runtime) => _showDuration(runtime)).join(", ");
 }
