@@ -1,9 +1,9 @@
 import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/domain/usecases_movie/get_movie_detail.dart';
 import 'package:ditonton/domain/usecases_movie/get_movie_recommendations.dart';
-import 'package:ditonton/domain/usecases_movie/get_watchlist_status.dart';
-import 'package:ditonton/domain/usecases_movie/remove_watchlist.dart';
-import 'package:ditonton/domain/usecases_movie/save_watchlist.dart';
+import 'package:ditonton/domain/usecases_movie/get_watchlist_status_movies.dart';
+import 'package:ditonton/domain/usecases_movie/remove_watchlist_movies.dart';
+import 'package:ditonton/domain/usecases_movie/save_watchlist_movies.dart';
 import 'package:ditonton/presentation/bloc/movie_bloc/movie_detail/movie_detail_event.dart';
 import 'package:bloc/bloc.dart';
 import 'package:ditonton/presentation/bloc/movie_bloc/movie_detail/movie_detail_state.dart';
