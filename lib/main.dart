@@ -27,6 +27,7 @@ import 'package:ditonton/presentation/pages/tv/top_rated_tv_page.dart';
 import 'package:ditonton/presentation/pages/tv/tv_detail_page.dart';
 import 'package:ditonton/presentation/pages/tv/tv_page.dart';
 import 'package:ditonton/presentation/pages/tv/watchlist_tv_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,6 +37,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await HttpSSLPinning.init();
   await Firebase.initializeApp();
+
   di.init();
   runApp(MyApp());
 }

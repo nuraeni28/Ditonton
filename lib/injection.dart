@@ -177,6 +177,6 @@ void init() {
   // helper movie
   locator.registerLazySingleton<DatabaseHelperTv>(() => DatabaseHelperTv());
   // external
-  locator.registerLazySingleton(() => http.Client());
+
   locator.registerLazySingleton(() => HttpSSLPinning.client);
 }
